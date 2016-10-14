@@ -1,0 +1,57 @@
+body {
+    background-color: #eee;
+    font-family: 'Quicksand', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding: 0;
+    margin: 0 auto;
+}
+
+html, div {
+    padding: 0;
+}
+
+.navbar {
+    background-color: #373737;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.itens {
+    display: inline-block;
+}
+
+.itens li {
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+}
+
+.itens li:not(.brand) {
+    color: #eaecef;
+    margin-left: 0.7rem;
+}
+
+.content {
+    margin-top: 65px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 10px;
+    border: 0.1px solid #ddd;
+    box-shadow: 0 3px 3px #ccc;
+}
+
+.brand {
+    font-weight: bold;
+    font: 1rem;
+}
+
+.post {
+    padding: 10px;
+}
+
+.active {
+    text-decoration: none;
+    color: #76daff;
+}
