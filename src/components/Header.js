@@ -5,15 +5,20 @@ export default class Header extends Component {
     render() {
         return (
             <div>
-            <header className="navbar">
-                <ul className="itens">
-                    <li className="brand">
-                        <Link to="/" activeClassName="active">CLOCKER</Link>
-                    </li>
-                </ul>
+            <header  className="navbar">
+                <nav className="container">
+                    <ul className="itens">
+                        <li className="brand">
+                            <Link to="/" activeClassName="active">REKCOLC</Link>
+                        </li>
+                        <li>ENTRAR</li>
+                    </ul>
+                </nav>
             </header>
 
-            {this.props.children}
+            <main className="container">
+                {this.props.children}
+            </main>
 
             </div>
         );

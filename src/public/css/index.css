@@ -1,12 +1,11 @@
 body {
     background-color: #eee;
-    font-family: 'Quicksand', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    padding: 0;
+    font-family: 'Quicksand', 
+        Impact, 
+        Haettenschweiler, 
+        'Arial Narrow Bold', 
+        sans-serif;
     margin: 0 auto;
-}
-
-html, div {
-    padding: 0;
 }
 
 .navbar {
@@ -19,7 +18,8 @@ html, div {
 }
 
 .itens {
-    display: inline-block;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 .itens li {
@@ -30,28 +30,51 @@ html, div {
 
 .itens li:not(.brand) {
     color: #eaecef;
-    margin-left: 0.7rem;
+    float: right;
+    margin-left: 0.7em;
 }
 
 .content {
-    margin-top: 65px;
-    margin-left: 40px;
-    margin-right: 40px;
-    margin-bottom: 10px;
-    border: 0.1px solid #ddd;
-    box-shadow: 0 3px 3px #ccc;
+    margin-top: 4em;
+    margin-bottom: 0.1em;
 }
 
 .brand {
     font-weight: bold;
-    font: 1rem;
+    font: 1em;
+    transform: scaleX(-1);
 }
 
-.post {
-    padding: 10px;
+.block {
+    display: inline-block;
+    padding: 0.7em;
+    margin-right: 1em;
+    margin-left: 1%;
+    margin-bottom: 1em;
+    border: 0.1px solid #ddd;
+    box-shadow: 0 3px 3px #ccc;
+}
+
+.block {
+    width: 100%;
+}
+@media (min-width: 768px) {
+    .block {
+        width: 50%;
+    }
+}
+@media (min-width: 1024px) {
+    .block {
+        width: 33.333%;
+    }
 }
 
 .active {
     text-decoration: none;
     color: #76daff;
+}
+
+.container {
+    max-width: 1500px;
+    margin: 0 auto;
 }
