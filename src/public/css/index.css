@@ -6,6 +6,8 @@ body {
         'Arial Narrow Bold', 
         sans-serif;
     margin: 0 auto;
+    margin-top: 4em;
+    margin-bottom: 0.1em;
 }
 
 .navbar {
@@ -29,44 +31,59 @@ body {
 }
 
 .itens li:not(.brand) {
-    color: #eaecef;
     float: right;
     margin-left: 0.7em;
 }
 
-.content {
-    margin-top: 4em;
-    margin-bottom: 0.1em;
-}
-
 .brand {
     font-weight: bold;
-    font: 1em;
+    font-size: 1em;
     transform: scaleX(-1);
 }
 
-.block {
-    display: inline-block;
+.block-content {
     padding: 0.7em;
-    margin-right: 1em;
-    margin-left: 1%;
-    margin-bottom: 1em;
-    border: 0.1px solid #ddd;
+    margin: 0 auto;
+    border-left: 0.1px solid #ddd;
+    border-right: 0.1px solid #ddd;
+    border-bottom: 0.1px solid #ddd;
     box-shadow: 0 3px 3px #ccc;
+    width: calc(100% - 2.7em);
+}
+
+.block-title {
+    background-color: #666;
+    border-left: 0.1px solid #ddd;
+    border-right: 0.1px solid #ddd;
+    border-top: 0.1px solid #ddd;
+    margin: 0 auto;
+    padding: 0.7em;
+    width: calc(100% - 2.7em);
+    color: #eaecef;
+}   
+@media (min-width: 800px) {
+    .block-content {
+        max-width: calc(70% - 2.7em);
+        margin: 0 auto;
+    }
+
+    .block-title {
+        max-width: calc(70% - 2.7em);
+        margin: 0 auto;
+    }
 }
 
 .block {
-    width: 100%;
+    margin-bottom: 1em;
 }
-@media (min-width: 768px) {
-    .block {
-        width: 50%;
-    }
+
+.block-title h3 {
+    margin: 0 auto;
 }
-@media (min-width: 1024px) {
-    .block {
-        width: 33.333%;
-    }
+
+.link {
+    text-decoration: none;
+    color: #eaecef;
 }
 
 .active {
@@ -77,4 +94,119 @@ body {
 .container {
     max-width: 1500px;
     margin: 0 auto;
+}
+
+input {
+    border: 0.1px solid #ddd;
+    padding: 1em;
+    width: calc(100% - 2em);
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
+}
+
+label {
+    font-weight: bold; 
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    padding: 0;
+    width: 100%;
+}
+
+.btn {
+    border: 0.2em solid #373737;
+    padding: 0.7em 1.5em 0.7em 1.5em;
+    background-color: #373737;
+    font-weight: bold;
+    color: #eaecef;
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
+    margin-right: 0.5em;
+}
+
+.btn.confirm {
+    background-color: #55bf52;
+    border-color: #55bf52;
+}
+
+.btn.alert {
+    background-color: #bfa552;
+    border-color: #bfa552;
+}
+
+.btn.danger {
+    background-color: #bf5252;
+    border-color: #bf5252;
+}
+
+.btn.default {
+    background-color: #5299bf;
+    border-color: #5299bf;
+}
+
+.btn:hover {
+    border-color: #eaecef;
+}
+
+.message {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 1em;
+    z-index: 9998;
+    border: 0.2em solid #373737;
+    padding-left: 0.5em;
+    background-color: #373737;
+    font-weight: bold;
+    color: #eaecef;
+    width: calc(100% - 2.7em);
+    box-shadow: 0 3px 3px #666;
+}
+@media (min-width: 1000px) {
+    .message {
+        max-width: 30%;
+    }
+}
+
+.message.confirm {
+    background-color: #55bf52;
+    border-color: #55bf52;
+}
+
+.message.alert {
+    background-color: #bfa552;
+    border-color: #bfa552;
+}
+
+.message.danger {
+    background-color: #bf5252;
+    border-color: #bf5252;
+}
+
+.message.default {
+    background-color: #5299bf;
+    border-color: #5299bf;
+}
+
+.message h4 {
+    font-weight: bold;
+    color: #76daff;
+}
+
+.message-content {
+    font-size: 0.9em;
+}
+
+.close {
+    padding-top: 0.3em;
+    color: #76daff;
+    font-size: 0.7em;
+    float: right;
+    margin: 2em;
 }
