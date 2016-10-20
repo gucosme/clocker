@@ -10,7 +10,7 @@ import Entrar from './components/Entrar.js'
 ReactDom.render(
     <Router history={browserHistory}>
         <Route path="/" component={Header}>
-            <IndexRoute component={Entrar} />
+            <IndexRoute component={Home} />
             <Route path="/entrar" component={Entrar}/>
         </Route>
     </Router>

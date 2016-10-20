@@ -1,3 +1,6 @@
 node_modules/
 docs/
 src/public/js/bundle.js
+jsconfig.json
+typings/
+src/typings.json

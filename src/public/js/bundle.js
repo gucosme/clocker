@@ -76,7 +76,7 @@
 	    _react2.default.createElement(
 	        _reactRouter.Route,
 	        { path: '/', component: _Header2.default },
-	        _react2.default.createElement(_reactRouter.IndexRoute, { component: _Entrar2.default }),
+	        _react2.default.createElement(_reactRouter.IndexRoute, { component: _Home2.default }),
 	        _react2.default.createElement(_reactRouter.Route, { path: '/entrar', component: _Entrar2.default })
 	    )
 	), document.getElementById('app'));
@@ -27180,7 +27180,7 @@
 	                    { className: 'container' },
 	                    this.props.children
 	                ),
-	                _react2.default.createElement(_Message2.default, { type: 'message-active', name: 'TESTE', message: 'Texto teste para mensagem' })
+	                _react2.default.createElement(_Message2.default, { type: 'message-active', name: 'Gustavo', message: 'Texto teste para mensagem' })
 	            );
 	        }
 	    }]);
@@ -27228,16 +27228,11 @@
 	    }
 
 	    _createClass(Message, [{
-	        key: 'isActive',
-	        value: function isActive() {
-	            return 'message-active';
-	        }
-	    }, {
 	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
 	                'div',
-	                { className: 'message ' + this.props.type + ' ' + this.props.isActive },
+	                { className: 'message ' + this.props.type },
 	                _react2.default.createElement(
 	                    'span',
 	                    { className: 'close' },
@@ -27246,7 +27241,7 @@
 	                _react2.default.createElement(
 	                    'h4',
 	                    null,
-	                    this.props.name
+	                    this.props.name.toUpperCase()
 	                ),
 	                _react2.default.createElement(
 	                    'p',
