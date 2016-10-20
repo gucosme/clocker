@@ -60,11 +60,11 @@
 
 	var _Header2 = _interopRequireDefault(_Header);
 
-	var _Home = __webpack_require__(236);
+	var _Home = __webpack_require__(238);
 
 	var _Home2 = _interopRequireDefault(_Home);
 
-	var _Entrar = __webpack_require__(238);
+	var _Entrar = __webpack_require__(240);
 
 	var _Entrar2 = _interopRequireDefault(_Entrar);
 
@@ -27118,7 +27118,7 @@
 
 	var _reactRouter = __webpack_require__(172);
 
-	var _Message = __webpack_require__(241);
+	var _Message = __webpack_require__(236);
 
 	var _Message2 = _interopRequireDefault(_Message);
 
@@ -27180,7 +27180,7 @@
 	                    { className: 'container' },
 	                    this.props.children
 	                ),
-	                _react2.default.createElement(_Message2.default, { name: 'TESTE', message: 'Texto teste para mensagem' })
+	                _react2.default.createElement(_Message2.default, { type: 'message-active', name: 'TESTE', message: 'Texto teste para mensagem' })
 	            );
 	        }
 	    }]);
@@ -27206,15 +27206,95 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Block = __webpack_require__(237);
+	var _text = __webpack_require__(237);
+
+	var _text2 = _interopRequireDefault(_text);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Message = function (_Component) {
+	    _inherits(Message, _Component);
+
+	    function Message() {
+	        _classCallCheck(this, Message);
+
+	        return _possibleConstructorReturn(this, (Message.__proto__ || Object.getPrototypeOf(Message)).apply(this, arguments));
+	    }
+
+	    _createClass(Message, [{
+	        key: 'isActive',
+	        value: function isActive() {
+	            return 'message-active';
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'message ' + this.props.type + ' ' + this.props.isActive },
+	                _react2.default.createElement(
+	                    'span',
+	                    { className: 'close' },
+	                    'DISPENSAR'
+	                ),
+	                _react2.default.createElement(
+	                    'h4',
+	                    null,
+	                    this.props.name
+	                ),
+	                _react2.default.createElement(
+	                    'p',
+	                    { className: 'message-content' },
+	                    _text2.default
+	                )
+	            );
+	        }
+	    }]);
+
+	    return Message;
+	}(_react.Component);
+
+	exports.default = Message;
+
+/***/ },
+/* 237 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	module.exports = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales urna sed commodo pellentesque. Quisque maximus mi malesuada, suscipit massa ut, euismod elit. Aenean at purus lacinia, lobortis nisi non, pellentesque tellus. In ultrices aliquet nunc ac tempus. In pretium est at nunc fermentum, eget elementum urna efficitur. Cras sagittis consequat pretium. Fusce et metus risus. Morbi ultricies nunc nibh, a feugiat lectus vestibulum et. In vel neque eget felis volutpat gravida.\n\nDonec sollicitudin lectus tempor, luctus sapien eu, cursus mi. Fusce eget diam vel erat faucibus dictum ac eu neque. Sed vulputate non magna nec pellentesque. Morbi semper volutpat tincidunt. Nullam malesuada justo id bibendum lacinia. Vestibulum gravida mollis leo, a tristique ipsum tristique eu. Suspendisse pellentesque lectus turpis.";
+
+/***/ },
+/* 238 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Block = __webpack_require__(239);
 
 	var _Block2 = _interopRequireDefault(_Block);
 
-	var _Entrar = __webpack_require__(238);
+	var _Entrar = __webpack_require__(240);
 
 	var _Entrar2 = _interopRequireDefault(_Entrar);
 
-	var _text = __webpack_require__(240);
+	var _text = __webpack_require__(237);
 
 	var _text2 = _interopRequireDefault(_text);
 
@@ -27262,7 +27342,7 @@
 	exports.default = Home;
 
 /***/ },
-/* 237 */
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -27324,7 +27404,7 @@
 	exports.default = Block;
 
 /***/ },
-/* 238 */
+/* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27339,11 +27419,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Block = __webpack_require__(237);
+	var _Block = __webpack_require__(239);
 
 	var _Block2 = _interopRequireDefault(_Block);
 
-	var _Button = __webpack_require__(239);
+	var _Button = __webpack_require__(241);
 
 	var _Button2 = _interopRequireDefault(_Button);
 
@@ -27406,7 +27486,7 @@
 	exports.default = Entrar;
 
 /***/ },
-/* 239 */
+/* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27435,23 +27515,15 @@
 	    function Button() {
 	        _classCallCheck(this, Button);
 
-	        var _this = _possibleConstructorReturn(this, (Button.__proto__ || Object.getPrototypeOf(Button)).call(this));
-
-	        _this.alertTest = _this.alertTest.bind(_this);
-	        return _this;
+	        return _possibleConstructorReturn(this, (Button.__proto__ || Object.getPrototypeOf(Button)).apply(this, arguments));
 	    }
 
 	    _createClass(Button, [{
-	        key: 'alertTest',
-	        value: function alertTest() {
-	            console.log('Funciona');
-	        }
-	    }, {
 	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
 	                'button',
-	                { onClick: this.alertTest, className: 'btn ' + this.props.type },
+	                { className: 'btn ' + this.props.type },
 	                this.props.name
 	            );
 	        }
@@ -27461,81 +27533,6 @@
 	}(_react.Component);
 
 	exports.default = Button;
-
-/***/ },
-/* 240 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	module.exports = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales urna sed commodo pellentesque. Quisque maximus mi malesuada, suscipit massa ut, euismod elit. Aenean at purus lacinia, lobortis nisi non, pellentesque tellus. In ultrices aliquet nunc ac tempus. In pretium est at nunc fermentum, eget elementum urna efficitur. Cras sagittis consequat pretium. Fusce et metus risus. Morbi ultricies nunc nibh, a feugiat lectus vestibulum et. In vel neque eget felis volutpat gravida.\n\nDonec sollicitudin lectus tempor, luctus sapien eu, cursus mi. Fusce eget diam vel erat faucibus dictum ac eu neque. Sed vulputate non magna nec pellentesque. Morbi semper volutpat tincidunt. Nullam malesuada justo id bibendum lacinia. Vestibulum gravida mollis leo, a tristique ipsum tristique eu. Suspendisse pellentesque lectus turpis.";
-
-/***/ },
-/* 241 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _text = __webpack_require__(240);
-
-	var _text2 = _interopRequireDefault(_text);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var Message = function (_Component) {
-	    _inherits(Message, _Component);
-
-	    function Message() {
-	        _classCallCheck(this, Message);
-
-	        return _possibleConstructorReturn(this, (Message.__proto__ || Object.getPrototypeOf(Message)).apply(this, arguments));
-	    }
-
-	    _createClass(Message, [{
-	        key: 'render',
-	        value: function render() {
-	            return _react2.default.createElement(
-	                'div',
-	                { className: 'message ' + this.props.type },
-	                _react2.default.createElement(
-	                    'span',
-	                    { className: 'close' },
-	                    'DISPENSAR'
-	                ),
-	                _react2.default.createElement(
-	                    'h4',
-	                    null,
-	                    this.props.name
-	                ),
-	                _react2.default.createElement(
-	                    'p',
-	                    { className: 'message-content' },
-	                    _text2.default
-	                )
-	            );
-	        }
-	    }]);
-
-	    return Message;
-	}(_react.Component);
-
-	exports.default = Message;
 
 /***/ }
 /******/ ]);

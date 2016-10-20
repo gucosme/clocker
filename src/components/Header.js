@@ -23,7 +23,7 @@ export default class Header extends Component {
                     {this.props.children}
                 </main>
 
-                <Message name="TESTE" message="Texto teste para mensagem"/>
+                <Message type="message-active" name="TESTE" message="Texto teste para mensagem"/>
             </div>
         );
     }

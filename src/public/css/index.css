@@ -167,10 +167,30 @@ hr {
     color: #eaecef;
     width: calc(100% - 2.7em);
     box-shadow: 0 3px 3px #666;
+    opacity: 0;
 }
 @media (min-width: 1000px) {
     .message {
         max-width: 30%;
+    }
+}
+
+.message-active {
+    animation: displayMessage 5s ease-in;
+}
+
+.message-active:hover {
+    animation-play-state: paused;
+}
+
+@keyframes displayMessage {
+    0%{
+        opacity: 0;
+        height: auto;
+    }
+    20%,100% {
+        opacity: 1;
+        height: auto;
     }
 }
 
