@@ -12,6 +12,7 @@ body {
 
 .navbar {
     background-color: #373737;
+    box-shadow: 0 1px 2px #555;
     position: fixed;
     z-index: 9999;
     top: 0;
@@ -159,16 +160,17 @@ hr {
     position: fixed;
     bottom: 0;
     right: 0;
-    margin: 1em;
+    margin: 0.6em;
     z-index: 9998;
     border: 0.2em solid #373737;
     padding-left: 0.5em;
+    padding-right: 0.5em;
     background-color: #373737;
     font-weight: bold;
     color: #eaecef;
-    width: calc(100% - 2.7em);
+    width: calc(100% - 2.6em);
     box-shadow: 0 3px 3px #666;
-    opacity: 0;
+    display: none;
 }
 @media (min-width: 1000px) {
     .message {
@@ -178,20 +180,15 @@ hr {
 
 .message-active {
     animation: displayMessage 5s ease-in;
-}
-
-.message-active:hover {
-    animation-play-state: paused;
+    display: block;
 }
 
 @keyframes displayMessage {
     0%{
-        opacity: 0;
-        height: auto;
+        display: none;
     }
     20%,100% {
-        opacity: 1;
-        height: auto;
+        display: block;
     }
 }
 
@@ -217,7 +214,6 @@ hr {
 
 .message h4 {
     font-weight: bold;
-    color: #76daff;
 }
 
 .message-content {
@@ -226,8 +222,16 @@ hr {
 
 .close {
     padding-top: 0.3em;
-    color: #76daff;
     font-size: 0.7em;
     float: right;
-    margin: 2em;
+    margin-top: 2em;
+}
+
+.close a:hover {
+    color: #666;
+    cursor: pointer;
+}
+
+.close a:active {
+    color: #555;
 }

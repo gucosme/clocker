@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import Block from './Block.js';
-import Button from './Button.js';
+import React, {Component} from 'react'
+import Block from './Block.js'
+import Button from './Button.js'
 
 export default class Entrar extends Component {
     render() {
@@ -17,6 +17,6 @@ export default class Entrar extends Component {
                 <Button type="danger" name="ENTRAR"/>
                 <Button type="alert" name="ENTRAR"/>
             </Block>
-        );
+        )
     }
 }

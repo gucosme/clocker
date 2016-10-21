@@ -27116,7 +27116,9 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactRouter = __webpack_require__(172);
+	var _Navbar = __webpack_require__(242);
+
+	var _Navbar2 = _interopRequireDefault(_Navbar);
 
 	var _Message = __webpack_require__(236);
 
@@ -27145,42 +27147,13 @@
 	            return _react2.default.createElement(
 	                'div',
 	                null,
-	                _react2.default.createElement(
-	                    'header',
-	                    { className: 'navbar' },
-	                    _react2.default.createElement(
-	                        'nav',
-	                        { className: 'container' },
-	                        _react2.default.createElement(
-	                            'ul',
-	                            { className: 'itens' },
-	                            _react2.default.createElement(
-	                                'li',
-	                                { className: 'brand' },
-	                                _react2.default.createElement(
-	                                    _reactRouter.Link,
-	                                    { to: '/', activeClassName: 'active' },
-	                                    'REKCOLC'
-	                                )
-	                            ),
-	                            _react2.default.createElement(
-	                                'li',
-	                                null,
-	                                _react2.default.createElement(
-	                                    _reactRouter.Link,
-	                                    { to: '/entrar', className: 'link' },
-	                                    'ENTRAR'
-	                                )
-	                            )
-	                        )
-	                    )
-	                ),
+	                _react2.default.createElement(_Navbar2.default, null),
 	                _react2.default.createElement(
 	                    'main',
 	                    { className: 'container' },
 	                    this.props.children
 	                ),
-	                _react2.default.createElement(_Message2.default, { type: 'message-active', name: 'Gustavo', message: 'Texto teste para mensagem' })
+	                _react2.default.createElement(_Message2.default, { name: 'Gustavo', message: 'Texto teste para mensagem' })
 	            );
 	        }
 	    }]);
@@ -27206,6 +27179,14 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _classnames = __webpack_require__(243);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _Button = __webpack_require__(241);
+
+	var _Button2 = _interopRequireDefault(_Button);
+
 	var _text = __webpack_require__(237);
 
 	var _text2 = _interopRequireDefault(_text);
@@ -27224,7 +27205,13 @@
 	    function Message() {
 	        _classCallCheck(this, Message);
 
-	        return _possibleConstructorReturn(this, (Message.__proto__ || Object.getPrototypeOf(Message)).apply(this, arguments));
+	        var _this = _possibleConstructorReturn(this, (Message.__proto__ || Object.getPrototypeOf(Message)).call(this));
+
+	        _this.state = {
+	            active: true
+	        };
+	        _this.messageDismiss = _this.messageDismiss.bind(_this);
+	        return _this;
 	    }
 
 	    _createClass(Message, [{
@@ -27232,23 +27219,33 @@
 	        value: function render() {
 	            return _react2.default.createElement(
 	                'div',
-	                { className: 'message ' + this.props.type },
+	                { className: 'message ' + (this.state.active ? 'message-active' : '') },
 	                _react2.default.createElement(
 	                    'span',
 	                    { className: 'close' },
-	                    'DISPENSAR'
+	                    _react2.default.createElement(
+	                        'a',
+	                        { onClick: this.messageDismiss },
+	                        'DISPENSAR'
+	                    )
 	                ),
 	                _react2.default.createElement(
 	                    'h4',
 	                    null,
 	                    this.props.name.toUpperCase()
 	                ),
+	                _react2.default.createElement('hr', null),
 	                _react2.default.createElement(
 	                    'p',
 	                    { className: 'message-content' },
-	                    _text2.default
+	                    this.props.message
 	                )
 	            );
+	        }
+	    }, {
+	        key: 'messageDismiss',
+	        value: function messageDismiss() {
+	            this.setState({ active: false });
 	        }
 	    }]);
 
@@ -27313,12 +27310,12 @@
 	    _createClass(Home, [{
 	        key: 'render',
 	        value: function render() {
-	            return _react2.default.createElement(
-	                'div',
-	                null,
-	                _react2.default.createElement(
+	            var blocks = ['1', '2', '3', '4', '5'];
+	            var renderArr = [];
+	            blocks.forEach(function (block) {
+	                renderArr.push(_react2.default.createElement(
 	                    _Block2.default,
-	                    { name: 'Teste' },
+	                    { name: block },
 	                    _text2.default.split('\n\n').map(function (el) {
 	                        return _react2.default.createElement(
 	                            'p',
@@ -27326,7 +27323,12 @@
 	                            el
 	                        );
 	                    })
-	                )
+	                ));
+	            });
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                renderArr
 	            );
 	        }
 	    }]);
@@ -27519,7 +27521,7 @@
 	            return _react2.default.createElement(
 	                'button',
 	                { className: 'btn ' + this.props.type },
-	                this.props.name
+	                this.props.name.toUpperCase()
 	            );
 	        }
 	    }]);
@@ -27528,6 +27530,136 @@
 	}(_react.Component);
 
 	exports.default = Button;
+
+/***/ },
+/* 242 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(172);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Navbar = function (_Component) {
+	    _inherits(Navbar, _Component);
+
+	    function Navbar() {
+	        _classCallCheck(this, Navbar);
+
+	        return _possibleConstructorReturn(this, (Navbar.__proto__ || Object.getPrototypeOf(Navbar)).apply(this, arguments));
+	    }
+
+	    _createClass(Navbar, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'header',
+	                { className: 'navbar' },
+	                _react2.default.createElement(
+	                    'nav',
+	                    { className: 'container' },
+	                    _react2.default.createElement(
+	                        'ul',
+	                        { className: 'itens' },
+	                        _react2.default.createElement(
+	                            'li',
+	                            { className: 'brand' },
+	                            _react2.default.createElement(
+	                                _reactRouter.Link,
+	                                { to: '/', activeClassName: 'active' },
+	                                'REKCOLC'
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            'li',
+	                            null,
+	                            _react2.default.createElement(
+	                                _reactRouter.Link,
+	                                { to: '/entrar', className: 'link' },
+	                                'ENTRAR'
+	                            )
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return Navbar;
+	}(_react.Component);
+
+	exports.default = Navbar;
+
+/***/ },
+/* 243 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+	  Copyright (c) 2016 Jed Watson.
+	  Licensed under the MIT License (MIT), see
+	  http://jedwatson.github.io/classnames
+	*/
+	/* global define */
+
+	(function () {
+		'use strict';
+
+		var hasOwn = {}.hasOwnProperty;
+
+		function classNames () {
+			var classes = [];
+
+			for (var i = 0; i < arguments.length; i++) {
+				var arg = arguments[i];
+				if (!arg) continue;
+
+				var argType = typeof arg;
+
+				if (argType === 'string' || argType === 'number') {
+					classes.push(arg);
+				} else if (Array.isArray(arg)) {
+					classes.push(classNames.apply(null, arg));
+				} else if (argType === 'object') {
+					for (var key in arg) {
+						if (hasOwn.call(arg, key) && arg[key]) {
+							classes.push(key);
+						}
+					}
+				}
+			}
+
+			return classes.join(' ');
+		}
+
+		if (typeof module !== 'undefined' && module.exports) {
+			module.exports = classNames;
+		} else if (true) {
+			// register as 'classnames', consistent with npm package name
+			!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
+				return classNames;
+			}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+		} else {
+			window.classNames = classNames;
+		}
+	}());
+
 
 /***/ }
 /******/ ]);

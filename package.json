@@ -9,6 +9,7 @@
   "author": "Gustavo C.",
   "license": "ISC",
   "dependencies": {
+    "classnames": "^2.2.5",
     "express": "^4.14.0",
     "mongodb": "^2.2.10",
     "react": "^15.3.2",

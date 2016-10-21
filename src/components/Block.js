@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 
 export default class Block extends Component {
   render() {
@@ -11,6 +11,6 @@ export default class Block extends Component {
           {this.props.children}
         </div>         
       </div>
-    );
+    )
   }
 } 

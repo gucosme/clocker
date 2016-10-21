@@ -1,9 +1,9 @@
-import React from 'react';
-import ReactDom from 'react-dom';
+import React from 'react'
+import ReactDom from 'react-dom'
 import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 
-import Header from './components/Header.js';
-import Home from './components/Home.js';
+import Header from './components/Header.js'
+import Home from './components/Home.js'
 import Entrar from './components/Entrar.js'
 
 
@@ -14,4 +14,4 @@ ReactDom.render(
             <Route path="/entrar" component={Entrar}/>
         </Route>
     </Router>
-, document.getElementById('app'));
+, document.getElementById('app'))
