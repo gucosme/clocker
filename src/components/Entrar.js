@@ -12,10 +12,6 @@ export default class Entrar extends Component {
                 <label>Senha</label> <br />
                 <input placeholder="********" type="password" /> <br />
                 <Button name="ENTRAR"/>
-                <Button type="confirm" name="ENTRAR"/>
-                <Button type="default" name="ENTRAR"/>
-                <Button type="danger" name="ENTRAR"/>
-                <Button type="alert" name="ENTRAR"/>
             </Block>
         )
     }

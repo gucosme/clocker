@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import ClassName from 'classnames'
 
 import Button from './Button.js'
 import text from '../text.js'
@@ -8,7 +7,7 @@ export default class Message extends Component {
     constructor() {
         super()
         this.state = {
-            active: true
+            active: false
         }
         this.messageDismiss = this.messageDismiss.bind(this)
     }

@@ -50,6 +50,7 @@ body {
     border-bottom: 0.1px solid #ddd;
     box-shadow: 0 3px 3px #ccc;
     width: calc(100% - 2.7em);
+    color: #222;
 }
 
 .block-title {
@@ -179,17 +180,7 @@ hr {
 }
 
 .message-active {
-    animation: displayMessage 5s ease-in;
     display: block;
-}
-
-@keyframes displayMessage {
-    0%{
-        display: none;
-    }
-    20%,100% {
-        display: block;
-    }
 }
 
 .message.confirm {
@@ -234,4 +225,21 @@ hr {
 
 .close a:active {
     color: #555;
+}
+
+.time {
+    font-family: 'Roboto', sans-serif;
+    color: inherit;
+    height: 10em;
+}
+
+.hour {
+    font-size: 8em;
+    float: left;
+}
+
+.hour-minus {
+    font-size: 4em;   
+    vertical-align: top;
+    float: left;
 }
