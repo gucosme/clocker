@@ -7,16 +7,27 @@ export default class Clock extends Component {
         this.state = {
             hour: moment().format('HH'),
             minutes: moment().format('mm'),
-            seconds: moment().format('ss')
+            seconds: moment().format('ss'),
+            task: 'clocker'
         }
     }
     render() {
         return (
-            <div className="time">
-                <div className="hour">{this.state.hour}</div>
-                <div className="hour-minus">
-                    <div className="minutes">{this.state.minutes}</div>
-                    <div className="seconds">{this.state.seconds}</div>
+            <div className="clock">
+                <div className="time">
+                    <div className="hour">{this.state.hour}</div>
+                    <div className="hour-minus">
+                        <div className="minutes">{this.state.minutes}</div>
+                        <div className="seconds">{this.state.seconds}</div>
+                    </div>
+                </div>
+                <div className="counter">
+                    <label>Tempo clockado em {this.state.task}</label>
+                    <input placeholder="--:--:--" disabled/>
+                    <label>Tempo clockado em {this.state.task}</label>
+                    <input placeholder="--:--:--" disabled/>
+                    <label>Tempo clockado em {this.state.task}</label>
+                    <input placeholder="--:--:--" disabled/>
                 </div>
             </div>
         )

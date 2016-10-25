@@ -7,7 +7,7 @@ export default class Message extends Component {
     constructor() {
         super()
         this.state = {
-            active: false
+            active: true
         }
         this.messageDismiss = this.messageDismiss.bind(this)
     }

@@ -27280,7 +27280,7 @@
 	        var _this = _possibleConstructorReturn(this, (Message.__proto__ || Object.getPrototypeOf(Message)).call(this));
 
 	        _this.state = {
-	            active: false
+	            active: true
 	        };
 	        _this.messageDismiss = _this.messageDismiss.bind(_this);
 	        return _this;
@@ -27647,7 +27647,8 @@
 	        _this.state = {
 	            hour: (0, _moment2.default)().format('HH'),
 	            minutes: (0, _moment2.default)().format('mm'),
-	            seconds: (0, _moment2.default)().format('ss')
+	            seconds: (0, _moment2.default)().format('ss'),
+	            task: 'clocker'
 	        };
 	        return _this;
 	    }
@@ -27657,25 +27658,54 @@
 	        value: function render() {
 	            return _react2.default.createElement(
 	                'div',
-	                { className: 'time' },
+	                { className: 'clock' },
 	                _react2.default.createElement(
 	                    'div',
-	                    { className: 'hour' },
-	                    this.state.hour
-	                ),
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'hour-minus' },
+	                    { className: 'time' },
 	                    _react2.default.createElement(
 	                        'div',
-	                        { className: 'minutes' },
-	                        this.state.minutes
+	                        { className: 'hour' },
+	                        this.state.hour
 	                    ),
 	                    _react2.default.createElement(
 	                        'div',
-	                        { className: 'seconds' },
-	                        this.state.seconds
+	                        { className: 'hour-minus' },
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'minutes' },
+	                            this.state.minutes
+	                        ),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'seconds' },
+	                            this.state.seconds
+	                        )
 	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'counter' },
+	                    _react2.default.createElement(
+	                        'label',
+	                        null,
+	                        'Tempo clockado em ',
+	                        this.state.task
+	                    ),
+	                    _react2.default.createElement('input', { placeholder: '--:--:--', disabled: true }),
+	                    _react2.default.createElement(
+	                        'label',
+	                        null,
+	                        'Tempo clockado em ',
+	                        this.state.task
+	                    ),
+	                    _react2.default.createElement('input', { placeholder: '--:--:--', disabled: true }),
+	                    _react2.default.createElement(
+	                        'label',
+	                        null,
+	                        'Tempo clockado em ',
+	                        this.state.task
+	                    ),
+	                    _react2.default.createElement('input', { placeholder: '--:--:--', disabled: true })
 	                )
 	            );
 	        }
@@ -27702,7 +27732,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {//! moment.js
-	//! version : 2.15.1
+	//! version : 2.15.2
 	//! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 	//! license : MIT
 	//! momentjs.com
@@ -28533,7 +28563,7 @@
 
 	    // LOCALES
 
-	    var MONTHS_IN_FORMAT = /D[oD]?(\[[^\[\]]*\]|\s+)+MMMM?/;
+	    var MONTHS_IN_FORMAT = /D[oD]?(\[[^\[\]]*\]|\s)+MMMM?/;
 	    var defaultLocaleMonths = 'January_February_March_April_May_June_July_August_September_October_November_December'.split('_');
 	    function localeMonths (m, format) {
 	        if (!m) {
@@ -31898,7 +31928,7 @@
 	    // Side effect imports
 
 
-	    utils_hooks__hooks.version = '2.15.1';
+	    utils_hooks__hooks.version = '2.15.2';
 
 	    setHookCallback(local__createLocal);
 
@@ -36896,7 +36926,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
-	//! locale : Japanese [jv]
+	//! locale : Javanese [jv]
 	//! author : Rony Lantip : https://github.com/lantip
 	//! reference: http://jv.wikipedia.org/wiki/Basa_Jawa
 
@@ -37661,7 +37691,7 @@
 	        months : {
 	            format: 'sausio_vasario_kovo_balandžio_gegužės_birželio_liepos_rugpjūčio_rugsėjo_spalio_lapkričio_gruodžio'.split('_'),
 	            standalone: 'sausis_vasaris_kovas_balandis_gegužė_birželis_liepa_rugpjūtis_rugsėjis_spalis_lapkritis_gruodis'.split('_'),
-	            isFormat: /D[oD]?(\[[^\[\]]*\]|\s+)+MMMM?|MMMM?(\[[^\[\]]*\]|\s+)+D[oD]?/
+	            isFormat: /D[oD]?(\[[^\[\]]*\]|\s)+MMMM?|MMMM?(\[[^\[\]]*\]|\s)+D[oD]?/
 	        },
 	        monthsShort : 'sau_vas_kov_bal_geg_bir_lie_rgp_rgs_spa_lap_grd'.split('_'),
 	        weekdays : {

@@ -173,7 +173,12 @@ hr {
     box-shadow: 0 3px 3px #666;
     display: none;
 }
-@media (min-width: 1000px) {
+@media (min-width: 800px) and (max-width:1000px) {
+    .message {
+        max-width: 45%;
+    }
+}
+@media (min-width:1001px) {
     .message {
         max-width: 30%;
     }
@@ -227,19 +232,44 @@ hr {
     color: #555;
 }
 
+.clock {
+    margin: 0 auto;
+}
+
+.clock > div{
+    display: inline-block;
+    padding: 1em;
+}
+@media (max-width:800px) {
+    .clock > div{
+        width: calc(100% - 2em);
+    }
+}
+
 .time {
     font-family: 'Roboto', sans-serif;
     color: inherit;
-    height: 10em;
+    width: 30%;
+    margin: 0 auto;
 }
 
 .hour {
     font-size: 8em;
-    float: left;
+    width: 50%;
 }
 
 .hour-minus {
-    font-size: 4em;   
-    vertical-align: top;
-    float: left;
+    font-size: 4em;
+}
+
+.hour-minus > div {
+    display: inline-block;
+}
+
+.minutes {
+    color: #a8a8a8;
+}
+
+.counter {
+    width: 70%;
 }
