@@ -27691,21 +27691,7 @@
 	                        'Tempo clockado em ',
 	                        this.state.task
 	                    ),
-	                    _react2.default.createElement('input', { placeholder: '--:--:--', disabled: true }),
-	                    _react2.default.createElement(
-	                        'label',
-	                        null,
-	                        'Tempo clockado em ',
-	                        this.state.task
-	                    ),
-	                    _react2.default.createElement('input', { placeholder: '--:--:--', disabled: true }),
-	                    _react2.default.createElement(
-	                        'label',
-	                        null,
-	                        'Tempo clockado em ',
-	                        this.state.task
-	                    ),
-	                    _react2.default.createElement('input', { placeholder: '--:--:--', disabled: true })
+	                    _react2.default.createElement('input', { placeholder: '--:--:--' })
 	                )
 	            );
 	        }

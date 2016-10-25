@@ -23,11 +23,7 @@ export default class Clock extends Component {
                 </div>
                 <div className="counter">
                     <label>Tempo clockado em {this.state.task}</label>
-                    <input placeholder="--:--:--" disabled/>
-                    <label>Tempo clockado em {this.state.task}</label>
-                    <input placeholder="--:--:--" disabled/>
-                    <label>Tempo clockado em {this.state.task}</label>
-                    <input placeholder="--:--:--" disabled/>
+                    <input placeholder="--:--:--" />
                 </div>
             </div>
         )

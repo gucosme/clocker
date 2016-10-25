@@ -232,44 +232,21 @@ hr {
     color: #555;
 }
 
-.clock {
-    margin: 0 auto;
-}
-
-.clock > div{
-    display: inline-block;
-    padding: 1em;
-}
-@media (max-width:800px) {
-    .clock > div{
-        width: calc(100% - 2em);
-    }
-}
-
 .time {
-    font-family: 'Roboto', sans-serif;
-    color: inherit;
-    width: 30%;
-    margin: 0 auto;
+    font-family: 'Roboto', cursive;
+    width: 99%;
 }
 
 .hour {
     font-size: 8em;
-    width: 50%;
+    display: inline-block;
 }
 
 .hour-minus {
-    font-size: 4em;
-}
-
-.hour-minus > div {
+    font-size: 3em;
     display: inline-block;
 }
 
 .minutes {
     color: #a8a8a8;
-}
-
-.counter {
-    width: 70%;
 }
