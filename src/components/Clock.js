@@ -5,9 +5,14 @@ export default class Clock extends Component {
     constructor() {
         super()
         this.state = {
-            hour: moment().format('HH'),
-            minutes: moment().format('mm'),
-            seconds: moment().format('ss'),
+            currentTime: {
+                hour: moment().format('HH'),
+                minutes: moment().format('mm'),
+                seconds: moment().format('ss')  
+            },
+            runningTime: {
+                hour: ''
+            },
             task: 'clocker'
         }
     }
@@ -15,14 +20,14 @@ export default class Clock extends Component {
         return (
             <div className="clock">
                 <div className="time">
-                    <div className="hour">{this.state.hour}</div>
+                    <div className="hour">{this.state.currentTime.hour}</div>
                     <div className="hour-minus">
-                        <div className="minutes">{this.state.minutes}</div>
-                        <div className="seconds">{this.state.seconds}</div>
+                        <div className="minutes">{this.state.currentTime.minutes}</div>
+                        <div className="seconds">{this.state.currentTime.seconds}</div>
                     </div>
                 </div>
                 <div className="counter">
-                    <label>Tempo clockado em {this.state.task}</label>
+                    <label for="cronometer">Tempo clockado em {this.state.task}</label>
                     <input placeholder="--:--:--" />
                 </div>
             </div>
@@ -35,6 +40,9 @@ export default class Clock extends Component {
                 minutes: moment().format('mm'),
                 seconds: moment().format('ss')
             });
-        }.bind(this), 1000);
+        }.bind(this), 1000)
+    }
+    componentWillUnmount() {
+        clearInterval(this._interval)
     }
 }
